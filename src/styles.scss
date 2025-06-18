@@ -1,1 +1,85 @@
-/* You can add global styles to this file, and also import other style files */
+$accordion-button-active-color: #000; 
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+.header-primary{
+    background-color: #51AAB9; 
+    border-color: #51AAB9;
+}
+
+.btn-primary {
+    background-color: #51AAB9; 
+    border-color: #51AAB9;
+}
+
+.btn-primary:hover {
+    background-color: #64BCCA;
+    border-color: #64BCCA;
+}
+
+.btn-primary:disabled {
+    background-color: #64BCCA;
+    border-color: #64BCCA;
+}
+
+.btn-primary.btn-primary:active {
+    background-color: #72C9CE; 
+    border-color: #72C9CE;
+}
+
+.btn-secondary {
+    background-color: #978E8A;
+    border-color: #978E8A;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #847975;
+    border-color: #847975;
+    color: #fff;
+}
+
+.table th {
+    background: #51AAB9;
+    color: white;
+}
+
+.table tbody tr:hover {
+    background: #72C9CE;
+}
+
+.btn-outline-primary {
+    color: #51AAB9;
+    border-color: #51AAB9;
+    background-color: transparent;
+}
+  
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #51AAB9;
+    border-color: #51AAB9;
+}
+
+.btn-outline-primary.btn-outline-primary:active {
+    background-color: #51AAB9; 
+    border-color: #51AAB9;
+}
+
+.btn-outline-primary.btn-outline-primary:disabled {
+    color: #51AAB9;
+    border-color: #51AAB9;
+    background-color: transparent;
+}
+
+.size-modals{
+    max-width: 80%;
+}
+
+.fondo-blanco {
+  background-color: #ffffff;
+}
+
+.fondo-gris {
+  background-color: #f7f7f7;
+}

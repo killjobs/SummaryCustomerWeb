@@ -1,0 +1,35 @@
+<div class="pagination-container text-center">
+  <div class="mt-2 mt-sm-0">
+    <div class="row">
+      <div class="col-2 col-sm-2 p-1">
+        <button class="btn btn-sm btn-outline-primary w-100 pagination-button" [disabled]="page === 1" (click)="changePage(page - 1)">
+        <span class="d-block d-sm-none"><</span>
+        <span class="d-none d-sm-block">Anterior</span>
+        </button>
+      </div>
+      <div class="col-4 col-sm-3">
+        <span class="d-none d-sm-block tiny-text-elements pt-1">Página {{ page }} de {{ totalPages }}</span>
+        <span class="d-block d-sm-none tiny-text-elements pt-3">Pág {{ page }} de {{ totalPages }}</span>
+      </div>
+      <div class="col-4 col-sm-2">
+        <span class="d-block tiny-text-elements pt-3 pt-sm-1">Total: {{ totalItems }}</span>
+      </div>
+      <div class="col-2 col-sm-2 p-1">
+        <button class="btn btn-sm btn-outline-primary w-100 pagination-button" [disabled]="page >= totalPages" (click)="changePage(page + 1)">
+          <span class="d-none d-sm-block">Siguiente</span>
+          <span class="d-block d-sm-none">></span>
+        </button>
+      </div>
+      <div class="col-12 col-sm-3 mt-2 mt-sm-0">
+        <div class="row">
+          <div class="col-6 tiny-text-elements pt-2 pt-sm-0"><span class=" w-100 p-0">Elementos por página:</span></div>
+          <div class="col-6 text-end p-1">
+              <select class="form-select tiny-text-elements" [(ngModel)]="pageSize" (change)="onPageSizeChange()">
+                <option *ngFor="let size of pageSizeOptions" [value]="size">{{ size }}</option>
+              </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

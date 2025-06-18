@@ -1,0 +1,52 @@
+
+<div class="modal-header header-primary text-white">
+    <h5 class="modal-title" id="customerModalLabel">{{ isEditing ? 'Editar Cliente' : 'Nuevo Cliente' }}</h5>
+    <button type="button" class="btn-close" (click)="cancel()" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+    <form [formGroup]="customerForm" (ngSubmit)="saveUpdateSummaryCustomer()">
+
+        <div class="mb-3">
+        <label for="orderNumber" class="form-label">Número de Orden</label>
+        <input type="text" id="orderNumber" class="form-control" formControlName="orderNumber">
+        <small class="text-danger" *ngIf="getErrorMessage('orderNumber')">{{getErrorMessage('orderNumber')}}</small>
+        </div>
+
+        <div class="mb-3">
+        <label for="createdDate" class="form-label">Fecha de Registro</label>
+        <input type="date" id="createdDate" class="form-control" formControlName="createdDate"
+                [max]="maxDate | customDate">
+                
+        <small class="text-danger" *ngIf="getErrorMessage('createdDate')">{{getErrorMessage('createdDate')}}</small>
+        </div>
+
+        <div class="mb-3">
+        <label for="fullName" class="form-label">Cliente</label>
+        <input type="text" id="fullName" class="form-control" formControlName="fullName">
+        <small class="text-danger" *ngIf="getErrorMessage('fullName')">{{getErrorMessage('fullName')}}</small>
+        </div>
+
+        <div class="mb-3">
+        <label for="phoneNumber" class="form-label">Teléfono</label>
+        <input type="text" id="phoneNumber" class="form-control" formControlName="phoneNumber">
+        <small class="text-danger" *ngIf="getErrorMessage('phoneNumber')">{{getErrorMessage('phoneNumber')}}</small>
+        </div>
+
+        <div class="mb-3">
+        <label for="purchaseSummary" class="form-label">Resumen de Compra</label>
+        <textarea id="purchaseSummary" class="form-control" formControlName="purchaseSummary"></textarea>
+        <small class="text-danger" *ngIf="getErrorMessage('purchaseSummary')">{{ getErrorMessage('purchaseSummary') }}</small>
+        </div>
+
+        <div class="mb-3">
+        <label for="cost" class="form-label">Costo</label>
+        <!--<input type="number" id="cost" class="form-control" formControlName="cost">-->
+        <input type="text" id="cost" class="form-control" formControlName="cost" (input)="onCostInput($event)"/>
+        <small class="text-danger" *ngIf="getErrorMessage('cost')">{{getErrorMessage('cost')}}</small>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="customerForm.invalid">
+        {{ isEditing ? 'Actualizar' : 'Crear' }}
+        </button>
+    </form>
+</div>

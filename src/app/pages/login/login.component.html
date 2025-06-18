@@ -1,0 +1,36 @@
+<div class="fondo vh-100">
+  <div class="wrapper">
+      <form [formGroup]="loginForm" (ngSubmit)="OnSubmit()" autocomplete="false">
+      <div class="card-sesion mx-auto border">
+          <div>
+              <div class="col-12 text-center">
+                  <img src="../../../assets/bannerStandard.png" alt="logo" class="responsive-img"/>
+                  <h4 class="col-md-12 d-none d-md-block">INICIO SESIÓN</h4>
+              </div>
+          </div>
+          <div class="responsive-width">
+              <div class="row">
+                  <div class="col-12">
+                      <span for="userName" class="form-label d-block ">Usuario</span>
+                      <input class="form-control" name ="userName" formControlName="userName"/>
+                  </div>
+              </div>
+              <div class="row py-2">
+                  <div class="col-12">
+                      <span for="password" class="form-label d-block">Contraseña</span>
+                      <input class="form-control" type="password" name="password" formControlName="password"/>
+                  </div>
+              </div>
+          </div>
+          <div class="pt-2 pb-5">
+              <div class="col-12 text-center">
+                  <button type="submit" class="form-control btn btn-primary responsive-width">
+                      <i class="bi bi-person fs-middle"></i> INICIAR SESIÓN
+                  </button>
+              </div>
+          </div>
+      </div>
+      </form>
+  </div>
+  
+</div>

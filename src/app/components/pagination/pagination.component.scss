@@ -1,0 +1,16 @@
+.tiny-text-elements{
+    font-size: 16px;
+}
+
+.pagination-button{
+    height: 40px;
+}
+
+@media (max-width: 480px) {
+    .tiny-text-elements{
+        font-size: 12px;
+    }
+    .pagination-button{
+        height: 50px;
+    }
+}
