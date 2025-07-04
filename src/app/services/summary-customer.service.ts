@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class SummaryCustomerService {
 
-  readonly PATH:string = "https://localhost:44326/SummaryCustomer";
+  readonly PATH:string = "https://summarycustomerapi.onrender.com/SummaryCustomer"; //"https://localhost:44326/SummaryCustomer";
   constructor(private http:HttpClient) { }
 
   GetSummaryCustomer(searchText: string, page: number, pageSize: number) {
@@ -30,6 +30,7 @@ export class SummaryCustomerService {
   }
 
   SaveUpdateSummaryCustomer(summaryCustomer: any){
+    console.log("ingreso")
     return this.http.post<any>(`${this.PATH}/CreateUpdateSummaryCustomer`, summaryCustomer);
   }
 

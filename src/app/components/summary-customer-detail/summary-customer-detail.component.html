@@ -18,6 +18,9 @@
         <p><strong>Resumen de Compra:</strong> {{ customer?.purchaseSummary }}</p>
         <p><strong>Costo:</strong> {{ customer?.cost | customCurrency }}</p>
       </div>
+      <div class="col-md-12">
+        <p><strong># orden:</strong> {{ customer?.orderNumber }}</p>
+      </div>
     </div>
   </div>
 </div>
@@ -32,6 +35,7 @@
     <table class="table table-striped table-bordered">
       <thead class="table-dark">
         <tr>
+          <th># orden</th>
           <th>Nombre</th>
           <th>Teléfono</th>
           <th>Resumen</th>
@@ -41,6 +45,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let detail of customerDetail">
+          <td>{{ detail?.orderNumber }}</td>
           <td>{{ detail?.fullName }}</td>
           <td>{{ detail?.phoneNumber }}</td>
           <td>{{ detail?.purchaseSummary }}</td>
@@ -76,6 +81,7 @@
           <div ngbAccordionCollapse>
               <div ngbAccordionBody>
                   <ng-template>
+                  # Orden: {{ detail?.orderNumber }} <br/><hr/>
                   Teléfono: {{ detail?.phoneNumber }} <br/><hr/>
                   Resumen de Compra: {{ detail?.purchaseSummary }}<br/><hr/>
                   </ng-template>

@@ -27,7 +27,7 @@ export interface Authentication{
 })
 
 export class AuthService {
-  readonly PATH: string = "https://localhost:44326/Auth";
+  readonly PATH: string = "https://summarycustomerapi.onrender.com/Auth" //"https://localhost:44326/Auth";
   private userToken:string = "";
   private userId:number = 0;
   private user:User | null = null;

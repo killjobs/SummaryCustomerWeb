@@ -38,6 +38,9 @@ export class SummaryCustomerComponent implements OnInit{
   pageSize: number = 10;
   totalResult: number = 0;
   delete: boolean = false;
+  dataLoaded: boolean = false;
+  isLoading: boolean = false;
+
   ngOnInit(): void {
     this.GetSummaryCustomer();
     this.validateRole();
@@ -77,6 +80,8 @@ export class SummaryCustomerComponent implements OnInit{
   }
 
   GetSummaryCustomer(): void {
+    this.dataLoaded = false;
+    this.isLoading = true;
     this.summaryCustomerService.GetSummaryCustomer(this.searchText, this.page, this.pageSize).subscribe(data => {
       if (data.success) {
         this.summaryCustomers = data.result;
@@ -84,6 +89,8 @@ export class SummaryCustomerComponent implements OnInit{
       } else {
         mensajeError("Error interno, contactar a soporte técnico");
       }
+      this.isLoading = false;
+      this.dataLoaded = true;
     });
   }
 

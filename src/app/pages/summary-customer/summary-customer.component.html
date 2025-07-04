@@ -1,22 +1,22 @@
 <div class="summaryClient">
     <div class="container">
       <div class="table-container">
-          <div class="mb-3 row">
-              <div class="col-sm-12 col-md-7">
-                  <input type="text" class="form-control" placeholder="Buscar usuario..."
-                  [(ngModel)]="searchText" (ngModelChange)="onSearchChange()">
-              </div>
-              <div class="col-6 col-md-3 mt-2 mt-md-0">
-                  <button type="button" class="btn btn-sm btn-primary btn-principal" (click)="viewCreateSummaryCustomer()">
-                      <i class="fas fa-plus"></i> Agregar Resumen<span class="d-none d-sm-block"> de Cliente</span>
-                  </button>
-              </div>
-              <div class="col-6 col-md-2 mt-2 mt-md-0">
-                  <button class="btn btn-secondary btn-principal" (click)="LogOut()">Logout</button>
-              </div>
-          </div>
-          <!--Visual Web-->
-          <div class="table-responsive d-none d-sm-block">
+        <div class="mb-3 row">
+            <div class="col-sm-12 col-md-7">
+                <input type="text" class="form-control" placeholder="Buscar usuario..."
+                [(ngModel)]="searchText" (ngModelChange)="onSearchChange()">
+            </div>
+            <div class="col-6 col-md-3 mt-2 mt-md-0">
+                <button type="button" class="btn btn-sm btn-primary btn-principal" (click)="viewCreateSummaryCustomer()">
+                    <i class="fas fa-plus"></i> Agregar Resumen<span class="d-none d-sm-block"> de Cliente</span>
+                </button>
+            </div>
+            <div class="col-6 col-md-2 mt-2 mt-md-0">
+                <button class="btn btn-secondary btn-principal" (click)="LogOut()">Logout</button>
+            </div>
+        </div>
+        <!--Visual Web-->
+        <div class="table-responsive d-none d-sm-block" *ngIf="dataLoaded">
               <table class="table table-striped table-hover">
                   <thead>
                       <tr class="text-center">
@@ -51,9 +51,9 @@
                       </tr>
                   </tbody>
               </table>
-          </div>
+        </div>
         <!--Visual Mobile-->
-        <div class="d-block d-sm-none">
+        <div class="d-block d-sm-none" *ngIf="dataLoaded">
             <div ngbAccordion>
                 <div ngbAccordionItem *ngFor="let summary of summaryCustomers; let i = index">
                     <h2 ngbAccordionHeader>
@@ -96,6 +96,7 @@
             </div>
         </div>
         <app-pagination
+            *ngIf="dataLoaded"
             [page]="page"
             [totalItems]="totalResult"
             [pageSize]="pageSize"
@@ -103,5 +104,10 @@
             (pageChange)="changePage($event)"
             (pageSizeChange)="onPageSizeChange($event)">
         </app-pagination>
+        <div *ngIf="isLoading" class="d-flex justify-content-center align-items-center my-4">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Cargando...</span>
+            </div>
+        </div>
     </div>
   </div>
