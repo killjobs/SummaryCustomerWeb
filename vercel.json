@@ -1,0 +1,5 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/summary-customer-app",
+  "framework": "static"
+}
