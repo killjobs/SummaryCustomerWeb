@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npx ng build --configuration=production",
+    "build": "ng build --configuration=production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.0.3",
-    "@angular/cli": "^17.0.3",
+    "@angular/cli": "^17.3.17",
     "@angular/compiler-cli": "^17.0.0",
     "@angular/localize": "^17.0.0",
     "@types/bootstrap": "^5.2.10",
