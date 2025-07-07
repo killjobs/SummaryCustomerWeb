@@ -1,5 +1,4 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist/summary-customer-app",
-  "framework": "angular"
+  "buildCommand": "npx ng build --configuration=production",
+  "outputDirectory": "dist/summary-customer-app"
 }
