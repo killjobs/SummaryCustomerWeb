@@ -1,4 +1,5 @@
 {
-  "buildCommand": "npx ng build --configuration=production",
-  "outputDirectory": "dist/summary-customer-app"
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "dist/summary-customer-app",
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD ./src"
 }
